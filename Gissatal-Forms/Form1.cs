@@ -19,7 +19,8 @@ namespace Gissatal_Forms
             InitializeComponent();
             Random rndint = new Random(); // Våran slumpmäsiga int variabel.            
             rndtal = rndint.Next(1, 101); // Här sätts värdet på variablen till ett slumpmässigt tal mellan 0 och 100.
-            int antalGuess = 0;
+            //int antalGuess = 0;
+            richTextBox1.Text = ("Jag har valt ett tal, gissa vilket!");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,13 +35,13 @@ namespace Gissatal_Forms
             int intsvar = Convert.ToInt32(strsvar);
             if (intsvar == rndtal)
             {
-                richTextBox1.Text = ("Du har gissat rätt, bra jobbat!                    Det tog dig " + antalGuess + " försök");
+                richTextBox1.Text = ("Du har gissat rätt, bra jobbat!                    Det tog dig " + antalGuess + "  försök");
             }
-            if (intsvar > rndtal)
+            else if (intsvar > rndtal)
             {
                 richTextBox1.Text = ("Fel! Du har gissat för högt! Försök igen");
             }
-            if (intsvar < rndtal)
+            else
             {
                 richTextBox1.Text = ("Fel! Du har gissat för lågt! Försök igen");
             }
